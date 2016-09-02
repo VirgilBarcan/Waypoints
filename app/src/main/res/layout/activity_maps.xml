@@ -4,173 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:clipChildren="true" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="150dp"
         android:background="@color/colorPrimary"
         android:elevation="4dp" >
 
-        <ScrollView
+        <ListView
+            android:id="@+id/from_to_waypoints_list_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
 
-            <LinearLayout
-                android:id="@+id/waypoints_relative_layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="vertical" >
+            <!-- This is where all layouts will be placed -->
 
-                <!-- From -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="top"
-                    android:gravity="center_vertical" >
-
-                    <EditText
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/light_blue"
-                        android:hint="From" />
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                        android:src="@drawable/ic_action_add" />
-
-                </LinearLayout>
-
-                <!-- Waypoints Start -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical" >
-
-                    <EditText
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/light_blue"
-                        android:hint="Waypoint" />
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                        android:src="@drawable/ic_close" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical" >
-
-                    <EditText
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/light_blue"
-                        android:hint="Waypoint" />
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                        android:src="@drawable/ic_close" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical" >
-
-                    <EditText
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/light_blue"
-                        android:hint="Waypoint" />
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                        android:src="@drawable/ic_close" />
-
-                </LinearLayout>
-                <!-- Waypoints End -->
-
-                <!-- To -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="bottom"
-                    android:gravity="center_vertical" >
-
-                    <EditText
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="5"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/light_blue"
-                        android:hint="To" />
-
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                        android:src="@drawable/ic_action_add" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </ScrollView>
+        </ListView>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2" >
+        android:layout_height="match_parent" >
 
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="com.moregoldbars.waypoints.MapsActivity" />
+            tools:context=".MapsActivity" />
 
     </LinearLayout>
 
